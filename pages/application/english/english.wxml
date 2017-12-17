@@ -1,0 +1,125 @@
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入姓名" type="text" bindinput='bindName'/>
+        </view>
+    </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">学号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入学号" type='number' bindinput='bindId'/>
+        </view>
+      </view>
+</view>
+ <view class="weui-btn-area">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <button type="primary">查询条件</button>
+            </picker>
+  </view>
+<!-- <label class="weui-input">暂只支持准考证号查询最近一次四六级成绩</label> -->
+<view class="weui-btn-area">
+    <button type='primary' bindtap='showToast'>查询</button>
+</view>
+<!--显示查询成绩页面  -->
+<view class="weui-cells weui-cells_after-title">
+  <block wx:for = "{{resultData}}">
+      <view wx:if = "{{item.select == '0'}}">
+        <view  wx:if = "{{item.grade0 != null}}">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">姓名</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade0}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">学校</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade1}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">考试等级</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade2}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">准考证号</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade3}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">总分</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade4}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">听力</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade5}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">阅读</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade6}}</text>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">写作与翻译</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <text class="weui-input">{{item.grade7}}</text>
+                  </view>
+              </view>
+            </view>
+        </view>
+      </view>
+      <view wx:if = "{{item.select=='1'}}">
+        <view wx:if = "{{item.zkzh!=null}}">
+              <view class="weui-cells weui-cells_after-title">
+                  <view class="weui-cell weui-cell_input">
+                      <view class="weui-cell__hd">
+                          <view class="weui-label">准考证号</view>
+                      </view>
+                      <view class="weui-cell__bd">
+                          <text class="weui-input">{{item.zkzh}}</text>
+                      </view>
+                  </view>
+                  <view class="weui-cell weui-cell_input">
+                      <view class="weui-cell__hd">
+                          <view class="weui-label">成绩</view>
+                      </view>
+                      <view class="weui-cell__bd">
+                          <text class="weui-input">{{item.cj}}</text>
+                      </view>
+                  </view>
+              </view>
+        </view>
+      </view>
+  </block>
+  
+</view>

@@ -1,0 +1,12 @@
+<!--pages/configure/userInfor/userInfor.wxml-->
+<scroll-view  class="content" scroll-y="true">
+               <view class="weui-article">
+                    <view class="weui-article__h1">使用说明</view>
+                    <view class="weui-article__section">
+                            <block wx:for = "{{introduce}}" wx:key="*this">
+                                <view class="weui-article__p">
+                              　{{item}}</view>
+                            </block>
+                    </view>
+                </view>
+</scroll-view>   

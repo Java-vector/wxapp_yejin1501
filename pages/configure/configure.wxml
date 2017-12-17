@@ -1,0 +1,45 @@
+<view class="page">
+<view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"> 
+          <button type="primary" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+              <block wx:else>
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+                  </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title">{{userInfo.nickName}}</view>
+                    <view class="weui-media-box__desc">{{userInfo.city}}.{{userInfo.province}}</view>
+                </view>
+              </block>
+</view>
+<view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+            <view class="weui-cells weui-cells_in-small-appmsg">
+                <navigator url="information/information" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__hd"><image src="infor.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>信息绑定</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                    <navigator url="userInfor/userInfor" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__hd"><image src="introduce.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>使用说明</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__hd"><image src="programmer.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view bindtap='showModal' style="word-break: break-all">程序版本</view>
+                    </view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </view>
+        </view>
+</view>
+<!--反馈建议  -->
+<view class='weui-btn-area'>
+<button type="primary"  open-type="contact" class="contact">反馈建议</button>
+</view>
+</view>

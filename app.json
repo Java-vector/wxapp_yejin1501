@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/configure/configure",
+    "pages/application/application",
+    "pages/application/telphone/telphone",
+    "pages/application/myLibrary/myLibrary",
+    "pages/application/myTel/myTel",
+    "pages/configure/information/information",
+    "pages/configure/userInfor/userInfor",
+    "pages/application/english/english",
+    "pages/application/computer/computer",
+    "pages/application/jwxt/jwxt"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "冶一冶一耶",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "list":[{
+      "iconPath":"images/appCenter.png",
+      "pagePath":"pages/application/application",
+      "selectedIconPath":"images/appCenter.png",
+      "text":"应用中心"
+    },
+    {
+      "iconPath":"images/personal.png",
+      "selectedIconPath":"images/personal.png",
+      "pagePath": "pages/configure/configure",
+      "text": "个人中心"
+    } 
+    ]
+  }
+}
